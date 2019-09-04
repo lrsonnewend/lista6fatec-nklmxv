@@ -1,0 +1,25 @@
+<div class="jumbotron text-center">
+  <h1>Cadastro de carros</h1>
+  <p>Paulo Henrique e Lucas Ribeiro</p> 
+</div>
+<form (ngSubmit)="add()" #f="ngForm">
+  <div class="form-group">
+    <label>Marca:</label>
+    <select class="form-control" [(ngModel)]="veiculo.marca" name="marca" #modelo="ngModel" id=cmbMarca required >
+       <option *ngFor="let item of marcas">{{item}}</option>
+    </select>             
+  </div>
+  <div class="form-group">
+    <label>Modelo:</label>
+    <input type="text" class="form-control" [(ngModel)]="veiculo.modelo" name="modelo" #modelo="ngModel" required placeholder="Ex: Gol G3">
+  </div>
+  <div>
+    <label>Valor:</label>
+    <input type="number" class="form-control" [(ngModel)]="veiculo.valor" name="valor" #valor="ngModel" required>
+  </div>
+  <div class="form-group"></div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="!f.form.valid">Salvar</button>
+    <button type="reset" id="limpar" class="btn btn-primary">Limpar</button>
+  </div>
+</form>

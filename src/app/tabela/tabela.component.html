@@ -1,0 +1,21 @@
+
+<div *ngIf="s.lista.length > 0" class="container">
+  <p>Carros</p>        
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of s.lista" (contextmenu)="excluir(item)">
+          <td>{{ item.marca }}</td>
+          <td>{{ item.modelo }}</td>
+          <td>{{ item.valor }}</td>
+      </tr>
+        
+    </tbody>
+  </table>
+</div>
